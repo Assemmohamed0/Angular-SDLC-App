@@ -1,3 +1,6 @@
+# SDLC-Web-App
+web application that allows you to manage your data in Software Development Life Cycle (SDLC) but it focuses on the first three phases
+
 # AngularProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
