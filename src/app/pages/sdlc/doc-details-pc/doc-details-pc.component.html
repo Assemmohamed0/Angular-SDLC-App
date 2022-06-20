@@ -1,0 +1,88 @@
+<div class="projCharter my-4  border rounded overflow-auto" id="phaseDetails"> 
+    <div class="detailsName p-2 border d-flex justify-content-between align-items-center">
+        <div id="docName">
+            Project Charter
+        </div>
+        <div>
+            <button id="closeBtn" class="btn btn-secondary" [routerLink]="['/', 'sdlc', 'details']">Close</button>
+        </div>
+    </div>
+    <div class="p-4 detailsContent">
+        <div class="container">
+            <div class="row my-3">
+                <div class="col-md-3 offset-3"> 
+                    <label>Project Title</label>
+                </div>
+                <div class="col-md-3"> 
+                    <h5>{{pcDocumentDetails.title}}</h5>
+                </div>
+
+            </div>
+            <div class="row my-3">
+                <div class="col-md-3 offset-3"> 
+                    <label>Project Start Date</label>
+                </div>
+                <div class="col-md-3"> 
+                    <h5>{{pcDocumentDetails.startDate}}</h5>
+                </div>
+
+            </div>
+            <div class="row my-3">
+                <div class="col-md-3 offset-3"> 
+                    <label>Project End Date</label>
+                </div>
+                <div class="col-md-3"> 
+                    <h5>{{pcDocumentDetails.endDate}}</h5>
+                </div>
+
+            </div>
+            <div class="row my-3">
+                <div class="col-md-3 offset-3"> 
+                    <label>Project Objectives</label>
+                </div>
+                <div class="col-md-3"> 
+                    <h5>{{pcDocumentDetails.objectives}}</h5>
+                </div>
+
+            </div>
+            <div class="row my-3">
+                <div class="col-md-3 offset-3"> 
+                    <label>Project Manager</label>
+                </div>
+                <div class="col-md-3"> 
+                    <h5>{{pcDocumentDetails.manager}}</h5>
+                </div>
+
+            </div>
+            <div class="row my-3">
+                <div class="col-md-3 offset-3"> 
+                    <label>Project Information</label>
+                </div>
+                <div class="col-md-3"> 
+                    <h5>{{pcDocumentDetails.information}}</h5>
+                </div>
+
+            </div>
+            <div class="row my-3">
+                <div class="col-md-3 offset-3"> 
+                    <label>Project Scope Statement</label>
+                </div>
+                <div class="col-md-3"> 
+                    <h5>{{pcDocumentDetails.scope}}</h5>
+                </div>
+
+            </div>
+            <div class="buttons row d-flex justify-content-center my-5">
+                <div class="col-md-6">
+                    <div class="buttons d-flex justify-content-around">
+                        <button class="btn btn-primary px-4" (click)="editProjectCharter()" >Edit</button>
+                        
+                        <button class="btn btn-danger px-4" (click)="deleteProjectCharter()" >Delete</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

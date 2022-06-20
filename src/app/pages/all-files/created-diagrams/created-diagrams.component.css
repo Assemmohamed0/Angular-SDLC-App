@@ -1,0 +1,15 @@
+.CreatedDiagrams
+{
+    max-height: 555px;
+    overflow: auto;
+}
+
+.CreatedDiagrams h2
+{
+    font-size: 1.5rem;
+}
+
+.diagramCard
+{
+    cursor: pointer;
+}

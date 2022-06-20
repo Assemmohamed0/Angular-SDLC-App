@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="my-3 row">
+        <div class="leftSide col-lg-3 d-flex align-items-center  p-3">
+            <div>
+                <button class="btn px-5 createBtn text-white-50" (click)="showPhases()">Create</button>
+            </div>
+        </div>
+        <div class="rightSide col-lg-9 d-flex align-items-center p-3">
+            <div class="w-100">
+                <app-sdlc-phases></app-sdlc-phases>
+            </div>
+            
+        </div>
+        <div class="leftSide col-lg-3">
+            <div>
+                <app-created-docs></app-created-docs>
+            </div>
+            
+        </div>
+        <div class="rightSide col-lg-9">
+            <div>
+                <!-- toggle between (forms) and (doc details) -->
+                <router-outlet></router-outlet>
+            </div>
+    
+        </div>
+    </div>
+</div>
+

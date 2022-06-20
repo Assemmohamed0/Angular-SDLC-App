@@ -1,0 +1,20 @@
+ .CreatedDocs
+{
+    max-height: 555px;
+    
+} 
+
+.CreatedDocs h2
+{
+    font-size: 1.8rem;
+}
+
+.documentCard:hover
+{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.documentCard p
+{
+    font-size: .8rem;
+}

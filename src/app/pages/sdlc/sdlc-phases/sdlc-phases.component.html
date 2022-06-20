@@ -1,0 +1,22 @@
+<div class="SDLCPhases w-100 p-2 d-flex justify-content-around rounded text-white" *ngIf="isVisible">
+    <p>SDLCPhase</p>
+    <div>
+        <select class="form-select selectPhase text-white" aria-label="Default select example">
+            <option selected [routerLink]="['/', 'sdlc', 'forms', 'pcForm']" (click)="removeUpdate()">Initiation Phase</option>
+            <option value="1" [routerLink]="['/', 'sdlc', 'forms', 'srsForm']" (click)="removeUpdate()">Requirements Phase (Analysis Phase)</option>
+            <option value="2" [routerLink]="['/', 'sdlc', 'forms', 'sddForm']">Design Phase</option>
+        </select>
+    </div>
+<!--     
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+          <li><a class="dropdown-item" [routerLink]="['/', 'sdlc', 'forms', 'pcForm']" (click)="removeUpdate()">Initiation Phase</a></li>
+          <li><a class="dropdown-item" [routerLink]="['/', 'sdlc', 'forms', 'srsForm']" (click)="removeUpdate()">Requirements Phase (Analysis Phase)</a></li>
+          <li><a class="dropdown-item" [routerLink]="['/', 'sdlc', 'forms', 'sddForm']">Design Phase</a></li>
+        </ul>
+      </div> 
+    -->
+</div>

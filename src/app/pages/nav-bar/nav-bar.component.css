@@ -1,0 +1,18 @@
+nav
+{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+nav ul li
+{
+    margin-right: 10px;
+}
+nav ul li a:hover
+{
+    cursor: pointer;
+}
+
+.activeItem
+{
+    background-color: rgba(238, 238, 238, 0.738);
+    color: black !important;
+}

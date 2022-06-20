@@ -1,0 +1,17 @@
+<div class="CreatedDiagrams my-4 p-4 border rounded overflow-auto position-relative" *ngIf="createdDiagramsSDD.length>0 || createdDiagramsSRS.length>0">
+    
+    <div class="diagramCard border my-2 rounded p-2" *ngFor="let createdDiagramSRS of createdDiagramsSRS ; index as srsI" (click)="viewSRS(srsI)">
+        <h4 class="fw-bold">Diagram: Use Case</h4>
+        <img class="img-fluid" [src]="createdDiagramSRS.useCaseSrc" alt="">
+        
+    </div>
+
+    <div class="diagramCard border my-2 rounded p-2" *ngFor="let createdDiagramSDD of createdDiagramsSDD ; index as sddI" (click)="viewSDD(sddI)">
+        <h4 class="fw-bold">Diagram:{{createdDiagramSDD.fileName}}</h4>
+        <img class="img-fluid" [src]="createdDiagramSDD.diagramSrc" alt="">
+        
+    </div>
+
+    
+</div>
+

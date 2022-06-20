@@ -1,0 +1,16 @@
+
+.phaseDetails ul
+{
+    list-style-type: decimal;
+}
+
+.SRS textarea
+{
+    resize: none;
+}
+
+.designImg
+{
+    width: 50px;
+    height: 50px;
+}

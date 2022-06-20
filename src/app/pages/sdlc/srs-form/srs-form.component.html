@@ -1,0 +1,99 @@
+<div class=" SRS my-4  border rounded overflow-auto"> 
+    <div class="detailsName p-2 border d-flex justify-content-between align-items-center">
+        <div id="docName">
+            Software Requirements Specification (SRS)
+        </div>
+        <div>
+            <button id="closeBtn" class="btn btn-secondary" [routerLink]="['/', 'sdlc', 'forms']">Close</button>
+        </div>
+    </div>
+    <form class="p-4 detailsContent" [formGroup]="requirementsForm" (ngSubmit)="saveCont()">
+        <div class="container">
+            <div class="row my-4 d-flex justify-content-center">
+                <div class="col-md-4"> 
+                    <label for="">Introduction</label>
+                </div>
+                <div class="col-md-4"> 
+                    <input type="text" name="" id="" class="rounded form-control w-100" formControlName="introduction" [class.is-valid]="requirementsForm.get('introduction')?.errors == null && requirementsForm.get('introduction')?.touched">
+                </div>
+                <div class="col-md-8">
+                    <p class="text-danger fw-bold my-1" *ngIf="requirementsForm.get('introduction')?.errors != null && requirementsForm.get('introduction')?.touched">introduction field is required</p>
+                </div>
+            </div>
+            <div class="row my-4 d-flex justify-content-center">
+                <div class="col-md-4"> 
+                    <label for="">Purpose of Software being Developed</label>
+                </div>
+                <div class="col-md-4"> 
+                    <input type="text" name="" id="" class="rounded form-control w-100" formControlName="purpose" [class.is-valid]="requirementsForm.get('purpose')?.errors == null && requirementsForm.get('purpose')?.touched">
+                </div>
+                <div class="col-md-8">
+                    <p class="text-danger fw-bold my-1" *ngIf="requirementsForm.get('purpose')?.errors != null && requirementsForm.get('purpose')?.touched">purpose field is required</p>
+                </div>
+            </div>
+            <div class="row my-4 d-flex justify-content-center">
+                <div class="col-md-4"> 
+                    <label for="">Intended Audience</label>
+                </div>
+                <div class="col-md-4"> 
+                    <input type="text" name="" id="" class="rounded form-control w-100" formControlName="intendedAudience" [class.is-valid]="requirementsForm.get('intendedAudience')?.errors == null && requirementsForm.get('intendedAudience')?.touched">
+                </div>
+                <div class="col-md-8">
+                    <p class="text-danger fw-bold my-1" *ngIf="requirementsForm.get('intendedAudience')?.errors != null && requirementsForm.get('intendedAudience')?.touched">intended Audience field is required</p>
+                </div>
+            </div>
+            <div class="row my-4 d-flex justify-content-center">
+                <div class="col-md-4"> 
+                    <label for="">Overall Description of the Software</label>
+                </div>
+                <div class="col-md-4"> 
+                    <input type="text" name="" id="" class="rounded form-control w-100" formControlName="description" [class.is-valid]="requirementsForm.get('description')?.errors == null && requirementsForm.get('description')?.touched">
+                </div>
+                <div class="col-md-8">
+                    <p class="text-danger fw-bold my-1" *ngIf="requirementsForm.get('description')?.errors != null && requirementsForm.get('description')?.touched">description field is required</p>
+                </div>
+            </div>
+            <div class="row my-4 d-flex justify-content-center">
+                <div class="col-md-4"> 
+                    <label for="">System Features and Requirements</label>
+                    <ul>
+                        <li>Functional Requirements</li>
+                        <li>Non-Functional Requirements</li>
+                        <li>External Interface Requirements</li>
+                    </ul>
+                </div>
+                <div class="col-md-4"> 
+                    <textarea name="" id="" rows="4" class="rounded form-control w-100" formControlName="systemFeatures" [class.is-valid]="requirementsForm.get('systemFeatures')?.errors == null && requirementsForm.get('systemFeatures')?.touched"></textarea>
+                </div>
+                <div class="col-md-8">
+                    <p class="text-danger fw-bold my-1" *ngIf="requirementsForm.get('systemFeatures')?.errors != null && requirementsForm.get('systemFeatures')?.touched">system Features field is required</p>
+                </div>
+            </div>
+            <div class="row my-4 d-flex justify-content-center align-items-center">
+                <div class="col-md-4 offset-2 d-flex justify-content-between align-items-center"> 
+                    <label for="">UseCase</label>                 
+                </div>
+                <div class="col-md-4"> 
+                    <input type="file" #file accept="image/*" (change)="readSRSSrc(file.files)" id="useCaseInput" class="rounded form-control w-100" [class.is-valid]="requirementsForm.get('useCaseSrc')?.errors == null && requirementsForm.get('useCaseSrc')?.touched">
+                </div>
+                <div class="col-md-2">
+                    <img class="designImg" [src]="requirementsForm.get('useCaseSrc')?.value" *ngIf="requirementsForm.get('useCaseSrc')?.valid">
+                </div>
+                <div class="col-md-8">
+                    <p class="text-danger fw-bold my-1" *ngIf="requirementsForm.get('useCaseSrc')?.errors != null && requirementsForm.get('useCaseSrc')?.touched">UseCase image is required</p>
+                </div>
+            </div>
+    
+            <div class="buttons row d-flex justify-content-center my-5">
+                <div class="col-md-6">
+                    <div class="buttons d-flex justify-content-around">
+                        <button class="btn btn-primary px-4" type="submit" [disabled]="requirementsForm.invalid">{{btnName}}</button>
+                        <button class="btn btn-danger px-4" type="reset">Reset</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </form>
+</div>

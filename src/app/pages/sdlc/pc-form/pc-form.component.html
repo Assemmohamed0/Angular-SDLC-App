@@ -1,0 +1,105 @@
+<div class="projCharter my-4  border rounded overflow-auto" id="phaseDetails"> 
+    <div class="detailsName p-2 border d-flex justify-content-between align-items-center">
+        <div id="docName">
+            Project Charter
+        </div>
+        <div>
+            <button id="closeBtn" class="btn btn-secondary" [routerLink]="['/', 'sdlc', 'forms']">Close</button>
+        </div>
+    </div>
+    <form class="p-4 detailsContent"  [formGroup]="initiationForm" (ngSubmit)="saveCont()">
+        <div class="container">
+            <div class="row my-4 d-flex justify-content-center">
+                <div class="col-md-4"> 
+                    <label>Project Title</label>
+                </div>
+                <div class="col-md-4"> 
+                    <input type="text" class="rounded form-control w-100"  formControlName="title" [class.is-valid]="initiationForm.get('title')?.errors == null && initiationForm.get('title')?.touched">
+                </div>
+                <div class="col-md-8">
+                    <p class="text-danger fw-bold my-1" *ngIf="initiationForm.get('title')?.errors != null && initiationForm.get('title')?.touched">title field is required</p>
+                </div>
+
+            </div>
+            <div formGroupName="Date">
+                <div class="row my-4 d-flex justify-content-center">
+                    <div class="col-md-4"> 
+                        <label>Project Start Date</label>
+                    </div>
+                    <div class="col-md-4"> 
+                        <input type="date" id="startDate" class="rounded form-control w-100" formControlName="startDate" (blur)="compareTwoDates()" [class.is-valid]="initiationForm.get('Date.startDate')?.errors == null && initiationForm.get('Date.startDate')?.touched && !dateError.isError">
+                    </div>
+                    <div class="col-md-8">
+                        <p class="text-danger fw-bold my-1" *ngIf="initiationForm.get('Date.startDate')?.errors != null && initiationForm.get('Date.startDate')?.touched">Start Date is required</p>
+                    </div>
+                </div>
+                <div class="row my-4 d-flex justify-content-center">
+                    <div class="col-md-4"> 
+                        <label>Project End Date</label>
+                    </div>
+                    <div class="col-md-4"> 
+                        <input type="date" id="endDate" class="rounded form-control w-100" formControlName="endDate" (blur)="compareTwoDates()" [class.is-valid]="initiationForm.get('Date.endDate')?.errors == null && initiationForm.get('Date.endDate')?.touched && !dateError.isError">
+                    </div>
+                    <div class="col-md-8">
+                        <p class="text-danger fw-bold my-1" *ngIf="initiationForm.get('Date.endDate')?.errors != null && initiationForm.get('Date.endDate')?.touched">End Date is required</p>
+                        <p class="text-danger fw-bold my-1">{{ dateError.errorMessage }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-4 d-flex justify-content-center">
+                <div class="col-md-4"> 
+                    <label>Project Objectives</label>
+                </div>
+                <div class="col-md-4"> 
+                    <input type="text" name="" id="" class="rounded form-control w-100" formControlName="objectives" [class.is-valid]="initiationForm.get('objectives')?.errors == null && initiationForm.get('objectives')?.touched">
+                </div>
+                <div class="col-md-8">
+                    <p class="text-danger fw-bold my-1" *ngIf="initiationForm.get('objectives')?.errors != null && initiationForm.get('objectives')?.touched">Objectives field is required</p>
+                </div>
+            </div>
+            <div class="row my-4 d-flex justify-content-center">
+                <div class="col-md-4"> 
+                    <label>Project Manager</label>
+                </div>
+                <div class="col-md-4"> 
+                    <input type="text" name="" id="" class="rounded form-control w-100" formControlName="manager" [class.is-valid]="initiationForm.get('manager')?.errors == null && initiationForm.get('manager')?.touched">
+                </div>
+                <div class="col-md-8">
+                    <p class="text-danger fw-bold my-1" *ngIf="initiationForm.get('manager')?.errors != null && initiationForm.get('manager')?.touched">Manager field is required</p>
+                </div>
+            </div>
+            <div class="row my-4 d-flex justify-content-center">
+                <div class="col-md-4"> 
+                    <label>Project Information</label>
+                </div>
+                <div class="col-md-4"> 
+                    <input type="text" name="" id="" class="rounded form-control w-100" formControlName="information" [class.is-valid]="initiationForm.get('information')?.errors == null && initiationForm.get('information')?.touched">
+                </div>
+                <div class="col-md-8">
+                    <p class="text-danger fw-bold my-1" *ngIf="initiationForm.get('information')?.errors != null && initiationForm.get('information')?.touched">Information field is required</p>
+                </div>
+            </div>
+            <div class="row my-4 d-flex justify-content-center">
+                <div class="col-md-4"> 
+                    <label>Project Scope Statement</label>
+                </div>
+                <div class="col-md-4"> 
+                    <input type="text" name="" id="" class="rounded form-control w-100" formControlName="scopeStatement" [class.is-valid]="initiationForm.get('scopeStatement')?.errors == null && initiationForm.get('scopeStatement')?.touched">
+                </div>
+                <div class="col-md-8">
+                    <p class="text-danger fw-bold my-1" *ngIf="initiationForm.get('scopeStatement')?.errors != null && initiationForm.get('scopeStatement')?.touched">Scope Statement is required</p>
+                </div>
+            </div>
+            <div class="buttons row d-flex justify-content-center my-5">
+                <div class="col-md-6">
+                    <div class="buttons d-flex justify-content-around">
+                        <button class="btn btn-primary px-4" type="submit" [disabled]="initiationForm.invalid || dateError.isError">{{btnName}}</button>
+                        <button class="btn btn-danger px-4" type="reset">Reset</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </form>
+</div>
